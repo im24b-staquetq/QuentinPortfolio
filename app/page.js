@@ -169,9 +169,6 @@ export default function Home() {
             <a className="text-slate-300 transition hover:text-slate-100" href="https://github.com/im24b-staquetq">
               GitHub
             </a>
-            <a className="text-slate-300 transition hover:text-slate-100" href="https://spinelplaiz.itch.io/">
-              Itch.io
-            </a>
             <a className="text-slate-300 transition hover:text-slate-100" href="mailto:quentin.staquet@malbikendar.net">
               Email
             </a>
