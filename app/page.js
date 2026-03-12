@@ -8,7 +8,6 @@ const projects = [
     tech: "GameMaker Language",
     tags: ["GameDev", "2D", "Gameplay"],
     image: "/jumpnrun.png",
-    githubUrl: "#",
     demoUrl: "https://youtu.be/soZAqPmaOzc",
   },
   {
@@ -18,8 +17,6 @@ const projects = [
     tech: "GDScript · LibreSprite",
     tags: ["GameDev", "Godot", "Dialogue System"],
     image: "/no-image-available.svg",
-    githubUrl: "#",
-    demoUrl: "#",
   },
 ];
 
@@ -62,30 +59,32 @@ export default function Home() {
       </header>
 
       <main className="mx-auto max-w-5xl px-6">
-        <section className="py-24">
-          <h1 className="text-5xl font-bold tracking-tight text-slate-100 md:text-6xl">
-            Quentin Staquet
-          </h1>
-          <p className="mt-4 text-xl text-slate-300">
-            Fullstack Developer &amp; Game Dev Enthusiast
-          </p>
-          <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-400">
-            Spezialisiert auf Next.js, Datenbankentwicklung und benutzerfreundliche Interfaces.
-            Mit Leidenschaft für sauberen Code und innovative Lösungen.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <a
-              className="rounded-lg border border-slate-700 bg-slate-900 px-7 py-3 text-sm font-semibold text-slate-100 transition hover:border-slate-500 hover:bg-slate-800"
-              href="#projects"
-            >
-              Projekte erkunden
-            </a>
-            <a
-              className="rounded-lg border border-slate-700 px-7 py-3 text-sm font-semibold text-slate-300 transition hover:border-slate-500 hover:text-slate-100"
-              href="#about"
-            >
-              Mehr über mich
-            </a>
+        <section className="flex min-h-screen items-center">
+          <div>
+            <h1 className="text-5xl font-bold tracking-tight text-slate-100 md:text-6xl">
+              Quentin Staquet
+            </h1>
+            <p className="mt-4 text-xl text-slate-300">
+              Fullstack Developer &amp; Game Dev Enthusiast
+            </p>
+            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-slate-400">
+              Spezialisiert auf Next.js, Datenbankentwicklung und benutzerfreundliche Interfaces.
+              Mit Leidenschaft für sauberen Code und innovative Lösungen.
+            </p>
+            <div className="mt-10 flex flex-wrap gap-4">
+              <a
+                className="rounded-lg border border-slate-700 bg-slate-900 px-7 py-3 text-sm font-semibold text-slate-100 transition hover:border-slate-500 hover:bg-slate-800"
+                href="#projects"
+              >
+                Projekte erkunden
+              </a>
+              <a
+                className="rounded-lg border border-slate-700 px-7 py-3 text-sm font-semibold text-slate-300 transition hover:border-slate-500 hover:text-slate-100"
+                href="#about"
+              >
+                Mehr über mich
+              </a>
+            </div>
           </div>
         </section>
 
@@ -102,7 +101,7 @@ export default function Home() {
             {projects.map((project) => (
               <article
                 key={project.title}
-                className="group rounded-xl border border-slate-800 bg-slate-900 p-5 transition duration-200 hover:scale-[1.02] hover:shadow-xl hover:shadow-black/30"
+                className="group flex h-full flex-col rounded-xl border border-slate-800 bg-slate-900 p-5 transition duration-200"
               >
                 <div className="mb-4 aspect-video w-full overflow-hidden rounded-lg bg-slate-800">
                   <Image
@@ -120,16 +119,25 @@ export default function Home() {
                 <p className="mt-3 text-xs text-slate-500">
                   {project.tags.join(" • ")}
                 </p>
-                <div className="mt-4 flex items-center justify-between gap-4">
+                <div className="mt-auto pt-4 flex flex-col items-start gap-2">
                   <span className="text-xs text-slate-300">{project.tech}</span>
-                  <div className="flex gap-3 text-xs">
-                    <a href={project.githubUrl} className="text-slate-400 transition hover:text-white">
-                      GitHub
-                    </a>
-                    <a href={project.demoUrl} className="text-slate-400 transition hover:text-white">
-                      Demo
-                    </a>
-                  </div>
+                  {(project.githubUrl || project.demoUrl) && (
+                    <div className="flex gap-3 text-xs">
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          className="text-slate-400 transition hover:text-white"
+                        >
+                          GitHub
+                        </a>
+                      )}
+                      {project.demoUrl && (
+                        <a href={project.demoUrl} className="text-slate-400 transition hover:text-white">
+                          Demo
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
               </article>
             ))}
