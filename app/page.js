@@ -23,15 +23,31 @@ const projects = [
 const skillGroups = [
   {
     title: "Frontend",
-    skills: ["React", "Next.js", "Tailwind CSS", "JavaScript"],
+    summary: "Moderne, performante Interfaces mit klarer UX.",
+    skills: [
+      { name: "React", level: "Fortgeschritten" },
+      { name: "Next.js", level: "Fortgeschritten" },
+      { name: "Tailwind CSS", level: "Sicher" },
+      { name: "JavaScript", level: "Sicher" },
+    ],
   },
   {
     title: "Backend",
-    skills: ["MySQL", "PostgreSQL", "Python"],
+    summary: "Saubere Datenmodelle und robuste Datenbanklogik.",
+    skills: [
+      { name: "MySQL", level: "Fortgeschritten" },
+      { name: "Python", level: "Sicher" },
+      { name: "PostgreSQL", level: "Sicher" },
+    ],
   },
   {
     title: "Game Dev",
-    skills: ["Godot", "GDScript", "GML"],
+    summary: "Gameplay-Prototyping und Iteration mit Fokus auf Feel.",
+    skills: [
+      { name: "Godot", level: "Fortgeschritten" },
+      { name: "GDScript", level: "Fortgeschritten" },
+      { name: "GML", level: "Sicher" },
+    ],
   },
 ];
 
@@ -145,24 +161,41 @@ export default function Home() {
         </section>
 
         <section id="skills" className="py-20 border-t border-slate-800">
-          <h2 className="mb-8 text-3xl font-bold">Skills</h2>
-          <div className="grid gap-8 md:grid-cols-3">
-            {skillGroups.map((group) => (
-              <div key={group.title}>
-                <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-slate-400">
-                  {group.title}
-                </h3>
-                <div className="flex flex-wrap gap-2">
-                  {group.skills.map((skill) => (
-                    <span
-                      key={skill}
-                      className="rounded-md border border-slate-700 px-3 py-1 text-sm text-slate-300"
-                    >
-                      {skill}
-                    </span>
-                  ))}
+          <h2 className="mb-3 text-3xl font-bold">Skills</h2>
+          <p className="mb-8 max-w-2xl text-slate-400">
+            Mein Stack verbindet Webentwicklung mit Game-Development. Diese Bereiche nutze ich
+            am haeufigsten in Projekten.
+          </p>
+          <div className="grid gap-6 md:grid-cols-3">
+            {skillGroups.map((group, index) => (
+              <article
+                key={group.title}
+                className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70"
+              >
+                <div className="p-6">
+                  <p className="text-xs font-semibold tracking-[0.2em] text-slate-400">0{index + 1}</p>
+                  <h3 className="mt-3 text-xl font-semibold text-slate-100">{group.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-300">{group.summary}</p>
+                  <ul className="mt-5 space-y-2">
+                    {[...group.skills]
+                      .sort((a, b) => {
+                        const rank = { Fortgeschritten: 0, Sicher: 1 };
+                        return (rank[a.level] ?? 99) - (rank[b.level] ?? 99);
+                      })
+                      .map((skill) => (
+                      <li
+                        key={skill.name}
+                        className="flex items-center justify-between rounded-lg border border-slate-700/80 bg-slate-950/70 px-3 py-2"
+                      >
+                        <span className="text-sm text-slate-100">{skill.name}</span>
+                        <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
+                          {skill.level}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </section>
