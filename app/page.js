@@ -156,13 +156,20 @@ export default function Home() {
                       {project.githubUrl && (
                         <a
                           href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
                           className="text-slate-400 transition hover:text-white"
                         >
                           GitHub
                         </a>
                       )}
                       {project.demoUrl && (
-                        <a href={project.demoUrl} className="text-slate-400 transition hover:text-white">
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-slate-400 transition hover:text-white"
+                        >
                           Demo
                         </a>
                       )}
@@ -220,8 +227,13 @@ export default function Home() {
             Neben meiner Leidenschaft für der Programmation interessiere ich mich auch für anderes.
             Beispiele dafür sind: Musik, Animes, Videospiele und anderes.
           </p>
-          <a href="https://spinel-plaiz.neocities.org/" className="text-slate-300 transition hover:text-slate-100">
-            Mehr über mich hier
+          <a
+            href="https://spinel-plaiz.neocities.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-slate-300 transition hover:text-slate-100"
+          >
+            Mehr über mein Privates und meine Interessen (in Entwicklung)
           </a>
         </section>
 
@@ -232,10 +244,20 @@ export default function Home() {
             kontaktieren.
           </p>
           <div className="mt-6 flex gap-4">
-            <a className="text-slate-300 transition hover:text-slate-100" href="https://github.com/im24b-staquetq">
+            <a
+              className="text-slate-300 transition hover:text-slate-100"
+              href="https://github.com/im24b-staquetq"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               GitHub
             </a>
-            <a className="text-slate-300 transition hover:text-slate-100" href="mailto:quentin.staquet@malbikendar.net">
+            <a
+              className="text-slate-300 transition hover:text-slate-100"
+              href="mailto:quentin.staquet@malbikendar.net"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Email
             </a>
           </div>
