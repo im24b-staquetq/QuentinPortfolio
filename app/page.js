@@ -70,6 +70,9 @@ export default function Home() {
             <a className="text-slate-400 transition hover:text-slate-100" href="#contact">
               Kontakt
             </a>
+            <a className="text-slate-400 transition hover:text-slate-100" href="#likes">
+              Interessen
+            </a>
           </nav>
         </div>
       </header>
@@ -198,6 +201,17 @@ export default function Home() {
               </article>
             ))}
           </div>
+        </section>
+
+        <section id="likes" className="py-20 border-t border-slate-800">
+          <h2 className="mb-3 text-3xl font-bold">Allgemeine Interessen und Freizeitaktivitäten</h2>
+          <p className="mb-8 max-w-2xl text-slate-400">
+            Neben meiner Leidenschaft für der Programmation interessiere ich mich auch für anderes.
+            Beispiele dafür sind: Musik, Animes, Videospiele und anderes.
+          </p>
+          <a href="https://spinel-plaiz.neocities.org/" className="text-slate-300 transition hover:text-slate-100">
+            Mehr über mich hier
+          </a>
         </section>
 
         <section id="contact" className="py-20 border-t border-slate-800">
