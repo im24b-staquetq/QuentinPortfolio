@@ -76,11 +76,11 @@ export default function Home() {
             <a className="text-slate-400 transition hover:text-slate-100" href="#skills">
               Skills
             </a>
-            <a className="text-slate-400 transition hover:text-slate-100" href="#contact">
-              Kontakt
-            </a>
             <a className="text-slate-400 transition hover:text-slate-100" href="#likes">
               Interessen
+            </a>
+            <a className="text-slate-400 transition hover:text-slate-100" href="#contact">
+              Kontakt
             </a>
           </nav>
         </div>
