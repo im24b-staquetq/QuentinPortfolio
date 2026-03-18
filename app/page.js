@@ -18,6 +18,15 @@ const projects = [
     tags: ["GameDev", "Godot", "Dialogue System"],
     image: "/no-image-available.svg",
   },
+  {
+    title: "Anime Watchlist",
+    description:
+      "Schulprojekt mit Java Spring Boot und Thymeleaf, bei dem man Animes zu einer Watchlist hinzufügen und mit Status, Ratings usw. verwalten kann. Dieses Projekt ist noch in Entwicklung.",
+    tech: "Java Spring Boot · Thymeleaf",
+    tags: ["Web App", "Backend", "CRUD"],
+    image: "/AnimeTrackerImage.png",
+    imageFit: "contain",
+  },
 ];
 
 const skillGroups = [
@@ -128,7 +137,9 @@ export default function Home() {
                     alt={project.title}
                     width={960}
                     height={540}
-                    className="h-full w-full object-cover opacity-80 transition group-hover:opacity-100"
+                    className={`h-full w-full opacity-80 transition group-hover:opacity-100 ${
+                      project.imageFit === "contain" ? "object-contain p-2" : "object-cover"
+                    }`}
                   />
                 </div>
                 <h3 className="text-xl font-semibold text-slate-100">{project.title}</h3>
