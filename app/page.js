@@ -1,29 +1,15 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 
 const projects = [
   {
     title: "Jump n' Run Game",
-    description:
-      "2D Jump n' Run Spiel mit GML in GameMaker Studio. Entwickelt als Abschlussarbeit der Sekundarschule mit Fokus auf Mechanik und Gameplay.",
-    tech: "GameMaker Language",
-    tags: ["GameDev", "2D", "Gameplay"],
+    tech: "GameMaker Studio · GameMaker Language",
     image: "/jumpnrun.png",
     demoUrl: "https://youtu.be/soZAqPmaOzc",
   },
   {
-    title: "Visual Novel Game",
-    description:
-      "Visual Novel mit GDScript in der Godot Engine. Pixel-Art-Grafiken mit LibreSprite designt. Die Projektdateien sind verloren gegangen, daher habe ich aktuell weder den vollständigen Build noch ein echtes Screenshot.",
-    tech: "GDScript · LibreSprite",
-    tags: ["GameDev", "Godot", "Dialogue System"],
-    image: "/no-image-available.svg",
-  },
-  {
     title: "Anime Watchlist",
-    description:
-      "Schulprojekt mit Java Spring Boot und Thymeleaf, bei dem man Animes zu einer Watchlist hinzufügen und mit Status, Ratings usw. verwalten kann. Dieses Projekt ist noch in Entwicklung.",
     tech: "Java Spring Boot · Thymeleaf",
-    tags: ["Web App", "Backend", "CRUD"],
     image: "/AnimeTrackerImage.png",
     imageFit: "contain",
   },
@@ -65,7 +51,7 @@ export default function Home() {
     <div className="min-h-screen bg-slate-950 text-slate-100">
       <header className="sticky top-0 z-10 border-b border-slate-800 bg-slate-950/80 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
-          <span className="text-sm font-bold tracking-widest text-slate-200">QS</span>
+          <span className="text-sm font-bold tracking-widest text-slate-200">Quentin Staquet</span>
           <nav className="hidden gap-8 text-sm md:flex">
             <a className="text-slate-400 transition hover:text-slate-100" href="#about">
               Über mich
@@ -75,6 +61,9 @@ export default function Home() {
             </a>
             <a className="text-slate-400 transition hover:text-slate-100" href="#skills">
               Skills
+            </a>
+            <a className="text-slate-400 transition hover:text-slate-100" href="#learning">
+              Lernen
             </a>
             <a className="text-slate-400 transition hover:text-slate-100" href="#likes">
               Interessen
@@ -119,7 +108,11 @@ export default function Home() {
         <section id="about" className="py-20 border-t border-slate-800">
           <h2 className="mb-6 text-3xl font-bold">Über mich</h2>
           <p className="max-w-3xl text-slate-300 leading-relaxed text-lg">
-            Ich bin ein Schüler bei der Informatikmittelschule Zürich mit Leidenschaft für Fullstack-Entwicklung und Game Design. Meine Stärken liegen in der Datenbankentwicklung und modernen Frontendendwicklung mit React und Next.js. In meiner Freizeit entwickle ich Spiele, um meine Fähigkeiten zu erweitern und kreativ zu sein. Ich strebe danach, Applikationsentwicklung zu studieren und mein Wissen zu vertiefen.
+            Ich bin ein Schüler bei der Informatikmittelschule Zürich mit Leidenschaft für
+            Fullstack-Entwicklung und Game Design. Meine Stärken liegen in der 
+            Datenbankentwicklung und modernen Frontendendwicklung mit React und Next.js. 
+            In meiner Freizeit entwickle ich Spiele, um meine Fähigkeiten zu erweitern 
+            und kreativ zu sein. Ich strebe danach, Applikationsentwicklung zu studieren und mein Wissen zu vertiefen.
           </p>
         </section>
 
@@ -129,7 +122,7 @@ export default function Home() {
             {projects.map((project) => (
               <article
                 key={project.title}
-                className="group flex h-full flex-col rounded-xl border border-slate-800 bg-slate-900 p-5 transition duration-200"
+                className="group flex h-full flex-col rounded-xl border border-slate-800 bg-slate-900 p-5 text-slate-200 transition duration-200"
               >
                 <div className="mb-4 aspect-video w-full overflow-hidden rounded-lg bg-slate-800">
                   <Image
@@ -137,38 +130,21 @@ export default function Home() {
                     alt={project.title}
                     width={960}
                     height={540}
-                    className={`h-full w-full opacity-80 transition group-hover:opacity-100 ${
-                      project.imageFit === "contain" ? "object-contain p-2" : "object-cover"
-                    }`}
+                    className={`h-full w-full opacity-80 transition group-hover:opacity-100 ${project.imageFit === "contain" ? "object-contain p-2" : "object-cover"
+                      }`}
                   />
                 </div>
-                <h3 className="text-xl font-semibold text-slate-100">{project.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-400">
-                  {project.description}
-                </p>
-                <p className="mt-3 text-xs text-slate-500">
-                  {project.tags.join(" • ")}
-                </p>
+                <h3 className="text-xl font-semibold">{project.title}</h3>
                 <div className="mt-auto pt-4 flex flex-col items-start gap-2">
-                  <span className="text-xs text-slate-300">{project.tech}</span>
-                  {(project.githubUrl || project.demoUrl) && (
-                    <div className="flex gap-3 text-xs">
-                      {project.githubUrl && (
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-slate-400 transition hover:text-white"
-                        >
-                          GitHub
-                        </a>
-                      )}
+                  <p className="text-sm">Technologien: {project.tech}</p>
+                  {project.demoUrl && (
+                    <div className="flex gap-3 text-sm">
                       {project.demoUrl && (
                         <a
                           href={project.demoUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-slate-400 transition hover:text-white"
+                          className="underline underline-offset-4 decoration-current transition hover:opacity-80"
                         >
                           Demo
                         </a>
@@ -185,7 +161,7 @@ export default function Home() {
           <h2 className="mb-3 text-3xl font-bold">Skills</h2>
           <p className="mb-8 max-w-2xl text-slate-400">
             Mein Stack verbindet Webentwicklung mit Game-Development. Diese Bereiche nutze ich
-            am haeufigsten in Projekten.
+            am häufigsten in Projekten.
           </p>
           <div className="grid gap-6 md:grid-cols-3">
             {skillGroups.map((group, index) => (
@@ -194,7 +170,6 @@ export default function Home() {
                 className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70"
               >
                 <div className="p-6">
-                  <p className="text-xs font-semibold tracking-[0.2em] text-slate-400">0{index + 1}</p>
                   <h3 className="mt-3 text-xl font-semibold text-slate-100">{group.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-slate-300">{group.summary}</p>
                   <ul className="mt-5 space-y-2">
@@ -221,10 +196,39 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="learning" className="py-20 border-t border-slate-800">
+          <h2 className="mb-8 text-3xl font-bold">Lernen</h2>
+          <div className="grid gap-6 md:grid-cols-2">
+            <article className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+              <h3 className="text-xl font-semibold text-slate-100">Aktuell lerne ich</h3>
+              <ul className="mt-4 space-y-2 text-slate-300">
+                <li className="rounded-lg border border-slate-700/80 bg-slate-950/70 px-3 py-2">
+                  C
+                </li>
+              </ul>
+            </article>
+
+            <article className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+              <h3 className="text-xl font-semibold text-slate-100">Möchte ich lernen</h3>
+              <ul className="mt-4 space-y-2 text-slate-300">
+                <li className="rounded-lg border border-slate-700/80 bg-slate-950/70 px-3 py-2">
+                  Python
+                </li>
+                <li className="rounded-lg border border-slate-700/80 bg-slate-950/70 px-3 py-2">
+                  Typescript
+                </li>
+                <li className="rounded-lg border border-slate-700/80 bg-slate-950/70 px-3 py-2">
+                  Bash
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+
         <section id="likes" className="py-20 border-t border-slate-800">
           <h2 className="mb-3 text-3xl font-bold">Allgemeine Interessen und Freizeitaktivitäten</h2>
           <p className="mb-8 max-w-2xl text-slate-400">
-            Neben meiner Leidenschaft für der Programmation interessiere ich mich auch für anderes.
+            Neben meiner Leidenschaft für die Programmation interessiere ich mich auch für anderes.
             Beispiele dafür sind: Musik, Animes, Videospiele und anderes.
           </p>
           <a
@@ -233,7 +237,7 @@ export default function Home() {
             rel="noopener noreferrer"
             className="text-slate-300 transition hover:text-slate-100"
           >
-            Mehr über mein Privates und meine Interessen (in Entwicklung)
+            Mehr über mein Privates und meine Interessen
           </a>
         </section>
 
