@@ -65,6 +65,9 @@ export default function Home() {
             <a className="text-slate-400 transition hover:text-slate-100" href="#learning">
               Lernen
             </a>
+            <a className="text-slate-400 transition hover:text-slate-100" href="#languages">
+              Sprachen
+            </a>
             <a className="text-slate-400 transition hover:text-slate-100" href="#likes">
               Interessen
             </a>
@@ -100,6 +103,13 @@ export default function Home() {
                 href="#about"
               >
                 Mehr über mich
+              </a>
+              <a
+                className="rounded-lg border border-slate-700 px-7 py-3 text-sm font-semibold text-slate-300 transition hover:border-slate-500 hover:text-slate-100"
+                href="/Lebenslauf-QuentinStaquet.pdf"
+                download
+              >
+                Lebenslauf herunterladen
               </a>
             </div>
           </div>
@@ -225,6 +235,26 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="languages" className="py-20 border-t border-slate-800">
+          <h2 className="mb-8 text-3xl font-bold">Sprachkenntnisse</h2>
+          <article className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+            <ul className="space-y-3 text-slate-300">
+              <li className="flex items-center justify-between rounded-lg border border-slate-700/80 bg-slate-950/70 px-3 py-2">
+                <span>Französisch</span>
+                <span className="text-sm">Muttersprache</span>
+              </li>
+              <li className="flex items-center justify-between rounded-lg border border-slate-700/80 bg-slate-950/70 px-3 py-2">
+                <span>Deutsch</span>
+                <span className="text-sm">C1</span>
+              </li>
+              <li className="flex items-center justify-between rounded-lg border border-slate-700/80 bg-slate-950/70 px-3 py-2">
+                <span>Englisch</span>
+                <span className="text-sm">C1</span>
+              </li>
+            </ul>
+          </article>
+        </section>
+
         <section id="likes" className="py-20 border-t border-slate-800">
           <h2 className="mb-3 text-3xl font-bold">Allgemeine Interessen und Freizeitaktivitäten</h2>
           <p className="mb-8 max-w-2xl text-slate-400">
@@ -263,6 +293,13 @@ export default function Home() {
               rel="noopener noreferrer"
             >
               Email
+            </a>
+            <a
+              className="text-slate-300 underline underline-offset-4 transition hover:text-slate-100"
+              href="/Lebenslauf-QuentinStaquet.pdf"
+              download
+            >
+              Lebenslauf herunterladen
             </a>
           </div>
         </section>
