@@ -34,8 +34,12 @@ const skillGroups = [
     summary: "Saubere Datenmodelle und robuste Datenbanklogik.",
     skills: [
       { name: "MySQL", level: "Fortgeschritten" },
+      { name: "Bash", level: "Fortgeschritten" },
       { name: "Python", level: "Sicher" },
       { name: "PostgreSQL", level: "Sicher" },
+      { name: "MongoDB", level: "Sicher" },
+      { name: "Java Spring Boot", level: "Sicher" },
+      { name: "Git", level: "Anfänger" },
     ],
   },
   {
@@ -297,16 +301,10 @@ export default function Home() {
               <h3 className="text-xl font-semibold text-slate-100">Möchte ich lernen</h3>
               <ul className="mt-4 space-y-2 text-slate-300">
                 <li className="rounded-lg border border-slate-700/80 bg-slate-950/70 px-3 py-2">
-                  Python
-                </li>
-                <li className="rounded-lg border border-slate-700/80 bg-slate-950/70 px-3 py-2">
                   TypeScript
                 </li>
                 <li className="rounded-lg border border-slate-700/80 bg-slate-950/70 px-3 py-2">
-                  Bash
-                </li>
-                <li className="rounded-lg border border-slate-700/80 bg-slate-950/70 px-3 py-2">
-                  Trackmania ML AI (PyTorch)
+                  PyTorch
                 </li>
               </ul>
             </article>
@@ -333,24 +331,8 @@ export default function Home() {
           </article>
         </section>
 
-        <section id="likes" className="py-20 border-t border-slate-800">
-          <h2 className="mb-3 text-3xl font-bold">Allgemeine Interessen und Freizeitaktivitäten</h2>
-          <p className="mb-8 max-w-2xl text-slate-400">
-            Neben meiner Leidenschaft für die Programmierung interessiere ich mich auch für anderes.
-            Beispiele dafür sind: Musik, Animes, Videospiele und anderes.
-          </p>
-          <a
-            href="https://spinel-plaiz.neocities.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-slate-300 transition hover:text-slate-100"
-          >
-            Mehr über mein Privates und meine Interessen
-          </a>
-        </section>
-
         <section id="contact" className="py-20 border-t border-slate-800">
-          <h2 className="mb-6 text-3xl font-bold">Kontakt</h2>
+          <h2 className="mb-6 text-3xl font-bold">Persönliche Daten</h2>
           <p className="max-w-xl text-slate-400">
             Wenn du an Zusammenarbeit interessiert bist oder Fragen hast, kannst du mich gerne
             kontaktieren.
@@ -373,7 +355,7 @@ export default function Home() {
               Email
             </a>
             <a
-              className="text-slate-300 underline underline-offset-4 transition hover:text-slate-100"
+              className="text-slate-300 transition hover:text-slate-100"
               href="/Lebenslauf-QuentinStaquet.pdf"
               download
             >
@@ -385,7 +367,7 @@ export default function Home() {
 
       <footer className="border-t border-slate-800 py-10 mt-10">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-6 text-sm text-slate-500">
-          <span>© 2026 Quentin Staquet</span>
+          <span>Quentin Staquet</span>
           <span>Zürich</span>
         </div>
       </footer>
