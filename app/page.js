@@ -195,7 +195,7 @@ export default function Home() {
           <p className="max-w-3xl text-slate-300 leading-relaxed text-lg">
             Ich bin ein Schüler bei der Informatikmittelschule Zürich mit Leidenschaft für
             Fullstack-Entwicklung und Game Design. Meine Stärken liegen in der 
-            Datenbankentwicklung und modernen Frontendendwicklung mit React und Next.js. 
+            Datenbankentwicklung und modernen Frontendentwicklung mit React und Next.js. 
             In meiner Freizeit entwickle ich Spiele, um meine Fähigkeiten zu erweitern 
             und kreativ zu sein. Ich strebe danach, Applikationsentwicklung zu studieren und mein Wissen zu vertiefen.
           </p>
@@ -300,10 +300,13 @@ export default function Home() {
                   Python
                 </li>
                 <li className="rounded-lg border border-slate-700/80 bg-slate-950/70 px-3 py-2">
-                  Typescript
+                  TypeScript
                 </li>
                 <li className="rounded-lg border border-slate-700/80 bg-slate-950/70 px-3 py-2">
                   Bash
+                </li>
+                <li className="rounded-lg border border-slate-700/80 bg-slate-950/70 px-3 py-2">
+                  Trackmania ML AI (PyTorch)
                 </li>
               </ul>
             </article>
@@ -333,7 +336,7 @@ export default function Home() {
         <section id="likes" className="py-20 border-t border-slate-800">
           <h2 className="mb-3 text-3xl font-bold">Allgemeine Interessen und Freizeitaktivitäten</h2>
           <p className="mb-8 max-w-2xl text-slate-400">
-            Neben meiner Leidenschaft für die Programmation interessiere ich mich auch für anderes.
+            Neben meiner Leidenschaft für die Programmierung interessiere ich mich auch für anderes.
             Beispiele dafür sind: Musik, Animes, Videospiele und anderes.
           </p>
           <a
@@ -383,7 +386,7 @@ export default function Home() {
       <footer className="border-t border-slate-800 py-10 mt-10">
         <div className="mx-auto flex max-w-5xl items-center justify-between px-6 text-sm text-slate-500">
           <span>© 2026 Quentin Staquet</span>
-          <span>Zurich</span>
+          <span>Zürich</span>
         </div>
       </footer>
     </div>
