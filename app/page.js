@@ -1,4 +1,7 @@
-﻿import Image from "next/image";
+﻿"use client";
+
+import { useState } from "react";
+import Image from "next/image";
 
 const projects = [
   {
@@ -47,11 +50,27 @@ const skillGroups = [
 ];
 
 export default function Home() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100">
       <header className="sticky top-0 z-10 border-b border-slate-800 bg-slate-950/80 backdrop-blur">
         <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
           <span className="text-sm font-bold tracking-widest text-slate-200">Quentin Staquet</span>
+          <button
+            type="button"
+            className="rounded-md border border-slate-700 p-2 text-slate-300 transition hover:border-slate-500 hover:text-slate-100 md:hidden"
+            aria-label="Navigation umschalten"
+            onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+          >
+            <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+              {isMobileMenuOpen ? (
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              )}
+            </svg>
+          </button>
           <nav className="hidden gap-8 text-sm md:flex">
             <a className="text-slate-400 transition hover:text-slate-100" href="#about">
               Über mich
@@ -76,6 +95,62 @@ export default function Home() {
             </a>
           </nav>
         </div>
+
+        {isMobileMenuOpen && (
+          <nav className="border-t border-slate-800 px-6 py-4 md:hidden">
+            <div className="flex flex-col gap-3 text-sm">
+              <a
+                className="text-slate-300 transition hover:text-slate-100"
+                href="#about"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Über mich
+              </a>
+              <a
+                className="text-slate-300 transition hover:text-slate-100"
+                href="#projects"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Projekte
+              </a>
+              <a
+                className="text-slate-300 transition hover:text-slate-100"
+                href="#skills"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Skills
+              </a>
+              <a
+                className="text-slate-300 transition hover:text-slate-100"
+                href="#learning"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Lernen
+              </a>
+              <a
+                className="text-slate-300 transition hover:text-slate-100"
+                href="#languages"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Sprachen
+              </a>
+              <a
+                className="text-slate-300 transition hover:text-slate-100"
+                href="#likes"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Interessen
+              </a>
+              <a
+                className="text-slate-300 transition hover:text-slate-100"
+                href="#contact"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Kontakt
+              </a>
+            </div>
+          </nav>
+        )}
       </header>
 
       <main className="mx-auto max-w-5xl px-6">
