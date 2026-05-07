@@ -23,34 +23,106 @@ const skillGroups = [
     title: "Frontend",
     summary: "Moderne, performante Interfaces mit klarer UX.",
     skills: [
-      { name: "React", level: "Fortgeschritten" },
-      { name: "Next.js", level: "Fortgeschritten" },
-      { name: "Tailwind CSS", level: "Sicher" },
-      { name: "JavaScript", level: "Sicher" },
+      {
+        name: "React",
+        level: "Fortgeschritten",
+        iconUrl: "https://skillicons.dev/icons?i=react",
+      },
+      {
+        name: "Next.js",
+        level: "Fortgeschritten",
+        iconUrl: "https://skillicons.dev/icons?i=nextjs",
+      },
+      {
+        name: "Tailwind CSS",
+        level: "Sicher",
+        iconUrl: "https://skillicons.dev/icons?i=tailwind",
+      },
+      {
+        name: "JavaScript",
+        level: "Sicher",
+        iconUrl: "https://skillicons.dev/icons?i=javascript",
+      },
     ],
   },
   {
     title: "Backend",
     summary: "Saubere Datenmodelle und robuste Datenbanklogik.",
     skills: [
-      { name: "MySQL", level: "Fortgeschritten" },
-      { name: "Bash", level: "Fortgeschritten" },
-      { name: "Python", level: "Sicher" },
-      { name: "PostgreSQL", level: "Sicher" },
-      { name: "MongoDB", level: "Sicher" },
-      { name: "Java Spring Boot", level: "Sicher" },
-      { name: "Git", level: "Anfänger" },
+      {
+        name: "Python",
+        level: "Sicher",
+        iconUrl: "https://skillicons.dev/icons?i=python",
+      },
+      {
+        name: "Java Spring Boot",
+        level: "Sicher",
+        iconUrl: "https://skillicons.dev/icons?i=spring",
+      },
+      {
+        name: "Csharp",
+        level: "Anfänger",
+        iconUrl: "https://skillicons.dev/icons?i=cs",
+      }
+    ],
+  },
+  {
+    title: "Tools & Utilities",
+    summary: "Nützliche Tools für Entwicklung, Deployment und mehr.",
+    skills: [
+      {
+        name: "MySQL",
+        level: "Fortgeschritten",
+        iconUrl: "https://skillicons.dev/icons?i=mysql",
+      },
+      {
+        name: "PostgreSQL",
+        level: "Sicher",
+        iconUrl: "https://skillicons.dev/icons?i=postgres",
+      },
+      {
+        name: "MongoDB",
+        level: "Sicher",
+        iconUrl: "https://skillicons.dev/icons?i=mongodb",
+      },
+      {
+        name: "Docker",
+        level: "Sicher",
+        iconUrl: "https://skillicons.dev/icons?i=docker",
+      },
+      {
+        name: "Bash",
+        level: "Fortgeschritten",
+        iconUrl: "https://skillicons.dev/icons?i=bash",
+      },
+      {
+        name: "Git",
+        level: "Anfänger",
+        iconUrl: "https://skillicons.dev/icons?i=git",
+      },
     ],
   },
   {
     title: "Game Dev",
     summary: "Gameplay-Prototyping und Iteration mit Fokus auf Feel.",
     skills: [
-      { name: "Godot", level: "Fortgeschritten" },
-      { name: "GDScript", level: "Fortgeschritten" },
-      { name: "GML", level: "Sicher" },
+      {
+        name: "Godot",
+        level: "Fortgeschritten",
+        iconUrl: "https://skillicons.dev/icons?i=godot",
+      },
+      {
+        name: "GDScript",
+        level: "Fortgeschritten",
+        iconUrl: "https://skillicons.dev/icons?i=godot",
+      },
+      {
+        name: "GML",
+        level: "Sicher",
+        iconUrl: "https://skillicons.dev/icons?i=gamemakerstudio",
+      },
     ],
-  },
+  }
 ];
 
 export default function Home() {
@@ -59,7 +131,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100">
       <header className="sticky top-0 z-10 border-b border-slate-800 bg-slate-950/80 backdrop-blur">
-        <div className="mx-auto flex h-16 max-w-5xl items-center justify-between px-6">
+        <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
           <span className="text-sm font-bold tracking-widest text-slate-200">Quentin Staquet</span>
           <button
             type="button"
@@ -90,9 +162,6 @@ export default function Home() {
             </a>
             <a className="text-slate-400 transition hover:text-slate-100" href="#languages">
               Sprachen
-            </a>
-            <a className="text-slate-400 transition hover:text-slate-100" href="#likes">
-              Interessen
             </a>
             <a className="text-slate-400 transition hover:text-slate-100" href="#contact">
               Kontakt
@@ -157,7 +226,7 @@ export default function Home() {
         )}
       </header>
 
-      <main className="mx-auto max-w-5xl px-6">
+      <main className="mx-auto max-w-6xl px-6">
         <section className="flex min-h-screen items-center">
           <div>
             <h1 className="text-5xl font-bold tracking-tight text-slate-100 md:text-6xl">
@@ -252,8 +321,8 @@ export default function Home() {
             Mein Stack verbindet Webentwicklung mit Game-Development. Diese Bereiche nutze ich
             am häufigsten in Projekten.
           </p>
-          <div className="grid gap-6 md:grid-cols-3">
-            {skillGroups.map((group, index) => (
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {skillGroups.map((group) => (
               <article
                 key={group.title}
                 className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70"
@@ -268,16 +337,19 @@ export default function Home() {
                         return (rank[a.level] ?? 99) - (rank[b.level] ?? 99);
                       })
                       .map((skill) => (
-                      <li
-                        key={skill.name}
-                        className="flex items-center justify-between rounded-lg border border-slate-700/80 bg-slate-950/70 px-3 py-2"
-                      >
-                        <span className="text-sm text-slate-100">{skill.name}</span>
-                        <span className="text-xs font-semibold uppercase tracking-wider text-slate-400">
-                          {skill.level}
-                        </span>
-                      </li>
-                    ))}
+                        <li
+                          key={skill.name}
+                          className="flex flex-col items-start gap-1 rounded-lg border border-slate-700/80 bg-slate-950/70 px-3 py-2"
+                        >
+                          <span className="inline-flex items-center gap-2 text-sm text-slate-100">
+                            <img className="h-8 w-8" src={skill.iconUrl} alt={skill.name} />
+                            {skill.name}
+                          </span>
+                          <span className="text-xs font-semibold uppercase tracking-wider text-slate-400 pl-10">
+                            {skill.level}
+                          </span>
+                        </li>
+                      ))}
                   </ul>
                 </div>
               </article>
@@ -292,7 +364,11 @@ export default function Home() {
               <h3 className="text-xl font-semibold text-slate-100">Aktuell lerne ich</h3>
               <ul className="mt-4 space-y-2 text-slate-300">
                 <li className="rounded-lg border border-slate-700/80 bg-slate-950/70 px-3 py-2">
-                  C
+                  <span className="inline-flex items-center gap-2">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img className="h-8 w-8" src="https://skillicons.dev/icons?i=cs" alt="CSharp" />
+                    CSharp
+                  </span>
                 </li>
               </ul>
             </article>
@@ -301,10 +377,25 @@ export default function Home() {
               <h3 className="text-xl font-semibold text-slate-100">Möchte ich lernen</h3>
               <ul className="mt-4 space-y-2 text-slate-300">
                 <li className="rounded-lg border border-slate-700/80 bg-slate-950/70 px-3 py-2">
-                  TypeScript
+                  <span className="inline-flex items-center gap-2">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img className="h-8 w-8" src="https://skillicons.dev/icons?i=ts" alt="TypeScript" />
+                    TypeScript
+                  </span>
                 </li>
                 <li className="rounded-lg border border-slate-700/80 bg-slate-950/70 px-3 py-2">
-                  PyTorch
+                  <span className="inline-flex items-center gap-2">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img className="h-8 w-8" src="https://skillicons.dev/icons?i=pytorch" alt="PyTorch" />
+                    PyTorch
+                  </span>
+                </li>
+                <li className="rounded-lg border border-slate-700/80 bg-slate-950/70 px-3 py-2">
+                  <span className="inline-flex items-center gap-2">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img className="h-8 w-8" src="https://skillicons.dev/icons?i=c" alt="C" />
+                    C
+                  </span>
                 </li>
               </ul>
             </article>
@@ -334,8 +425,7 @@ export default function Home() {
         <section id="contact" className="py-20 border-t border-slate-800">
           <h2 className="mb-6 text-3xl font-bold">Persönliche Daten</h2>
           <p className="max-w-xl text-slate-400">
-            Wenn du an Zusammenarbeit interessiert bist oder Fragen hast, kannst du mich gerne
-            kontaktieren.
+            Hier kannst du mich erreichen oder meinen Lebenslauf herunterladen.
           </p>
           <div className="mt-6 flex gap-4">
             <a
