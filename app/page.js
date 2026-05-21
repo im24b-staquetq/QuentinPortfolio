@@ -129,7 +129,7 @@ const skillGroups = [
 const osSystems = [
   { name: "NixOS", iconUrl: "https://cdn.simpleicons.org/nixos/7EBAE4", rating: 5, note: "Echt gute Linux Distribution. Performant, man kann alles anpassen. Hatte viel Spass, mein Hyprland Config zu erstellen." },
   { name: "Windows 10", iconUrl: "https://skillicons.dev/icons?i=windows", rating: 4.5, note: "Beste Windows Version, die ich je genutzt habe." },
-  { name: "Fedora Linux", iconUrl: "https://cdn.simpleicons.org/fedora/51A2DA", rating: 4, note: "Fast so gut wie NixOS, aber ich habe GNOME nicht so gerne." },
+  { name: "Fedora Linux", iconUrl: "https://cdn.simpleicons.org/fedora/51A2DA", rating: 4, note: "Fast so gut wie NixOS, aber ich habe GNOME nicht so gerne. Nouveau Drivers sind gut für Nvidia 4000-Serie Grafikkarten." },
   { name: "Windows 11", iconUrl: "https://skillicons.dev/icons?i=windows", rating: 3.5, note: "Windows 10 aber schlechter und überall Copilot. 16GB RAM kann sogar manchmal zu wenig werden." },
 ];
 
