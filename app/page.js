@@ -125,6 +125,53 @@ const skillGroups = [
   }
 ];
 
+// rating: 0–5 in 0.5-Schritten (z. B. 4.5), note: kurze Begründung (leer lassen = kein Text)
+const osSystems = [
+  { name: "NixOS", iconUrl: "https://cdn.simpleicons.org/nixos/7EBAE4", rating: 5, note: "Echt gute Linux Distribution. Performant, man kann alles anpassen. Hatte viel Spass, mein Hyprland Config zu erstellen." },
+  { name: "Windows 10", iconUrl: "https://skillicons.dev/icons?i=windows", rating: 4.5, note: "Beste Windows Version, die ich je genutzt habe." },
+  { name: "Fedora Linux", iconUrl: "https://cdn.simpleicons.org/fedora/51A2DA", rating: 4, note: "Fast so gut wie NixOS, aber ich habe GNOME nicht so gerne." },
+  { name: "Windows 11", iconUrl: "https://skillicons.dev/icons?i=windows", rating: 3.5, note: "Windows 10 aber schlechter und überall Copilot. 16GB RAM kann sogar manchmal zu wenig werden." },
+];
+
+function OsStar({ fill }) {
+  if (fill <= 0) {
+    return (
+      <span className="inline-block w-[1em] text-slate-600" aria-hidden>
+        ★
+      </span>
+    );
+  }
+  if (fill >= 1) {
+    return (
+      <span className="inline-block w-[1em] text-amber-400" aria-hidden>
+        ★
+      </span>
+    );
+  }
+  return (
+    <span className="relative inline-block w-[1em]" aria-hidden>
+      <span className="text-slate-600">★</span>
+      <span
+        className="absolute left-0 top-0 h-full overflow-hidden text-amber-400"
+        style={{ width: `${fill * 100}%` }}
+      >
+        <span className="inline-block w-[1em]">★</span>
+      </span>
+    </span>
+  );
+}
+
+function OsStars({ rating }) {
+  const value = Math.min(5, Math.max(0, Number(rating) || 0));
+  return (
+    <span className="inline-flex shrink-0 gap-px text-sm leading-none" aria-label={`${value} von 5`}>
+      {[1, 2, 3, 4, 5].map((n) => (
+        <OsStar key={n} fill={Math.min(1, Math.max(0, value - (n - 1)))} />
+      ))}
+    </span>
+  );
+}
+
 export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -160,12 +207,16 @@ export default function Home() {
             <a className="text-slate-400 transition hover:text-slate-100" href="#learning">
               Lernen
             </a>
+            <a className="text-slate-400 transition hover:text-slate-100" href="#os">
+              Betriebssysteme
+            </a>
             <a className="text-slate-400 transition hover:text-slate-100" href="#languages">
               Sprachen
             </a>
             <a className="text-slate-400 transition hover:text-slate-100" href="#contact">
               Kontakt
             </a>
+            <a className="text-slate-400 transition hover:text-slate-100" href="#os"></a>
           </nav>
         </div>
 
@@ -199,6 +250,13 @@ export default function Home() {
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Lernen
+              </a>
+              <a
+                className="text-slate-300 transition hover:text-slate-100"
+                href="#os"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                Betriebssysteme
               </a>
               <a
                 className="text-slate-300 transition hover:text-slate-100"
@@ -254,7 +312,7 @@ export default function Home() {
               </a>
               <a
                 className="rounded-lg border border-slate-700 px-7 py-3 text-sm font-semibold text-slate-300 transition hover:border-slate-500 hover:text-slate-100"
-                href="/Lebenslauf-QuentinStaquet.pdf"
+                href="/Lebenslauf_Quentin.pdf"
                 download
               >
                 Lebenslauf herunterladen
@@ -402,6 +460,35 @@ export default function Home() {
           </div>
         </section>
 
+        <section id="os" className="py-20 border-t border-slate-800">
+          <h3 className="mb-8 text-3xl font-bold">Betriebssysteme</h3>
+          <p className="mb-8 text-lg text-slate-400">
+            Ich habe schon verschiedene Betriebssysteme genutzt, für Gaming, Schule und Privat. Hier sind meine Gedanken zu den verschiedenen Betriebssystemen.
+          </p>
+          <article className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
+            <ul className="mt-4 space-y-2 text-slate-300">
+              {osSystems.map((os) => (
+                <li
+                  key={os.name}
+                  className="flex flex-col gap-1.5 rounded-lg border border-slate-700/80 bg-slate-950/70 px-3 py-2"
+                >
+                  <div className="flex items-center justify-between gap-3">
+                    <span className="inline-flex items-center gap-2">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img className="h-8 w-8" src={os.iconUrl} alt={os.name} />
+                      {os.name}
+                    </span>
+                    <OsStars rating={os.rating} />
+                  </div>
+                  {os.note ? (
+                    <p className="pl-10 text-sm leading-relaxed text-slate-400">{os.note}</p>
+                  ) : null}
+                </li>
+              ))}
+            </ul>
+          </article>
+        </section>
+
         <section id="languages" className="py-20 border-t border-slate-800">
           <h2 className="mb-8 text-3xl font-bold">Sprachkenntnisse</h2>
           <article className="rounded-2xl border border-slate-800 bg-slate-900/70 p-6">
@@ -446,7 +533,7 @@ export default function Home() {
             </a>
             <a
               className="text-slate-300 transition hover:text-slate-100"
-              href="/Lebenslauf-QuentinStaquet.pdf"
+              href="/Lebenslauf_Quentin.pdf"
               download
             >
               Lebenslauf herunterladen
