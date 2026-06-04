@@ -11,9 +11,30 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio-im24b.vercel.app";
+
 export const metadata = {
-  title: "Quentin Staquet - Portfolio",
-  description: "Fullstack developer portfolio - Next.js, React, Databases & Game Development",
+  title: "Quentin Staquet – Portfolio",
+  description:
+    "Fullstack Developer & Game-Dev Enthusiast. Next.js, React, Datenbanken und Game Development – Portfolio von Quentin Staquet, IMS Zürich.",
+  openGraph: {
+    title: "Quentin Staquet – Portfolio",
+    description:
+      "Fullstack Developer & Game-Dev Enthusiast. Projekte, Skills und Kontakt.",
+    url: siteUrl,
+    siteName: "Quentin Staquet Portfolio",
+    locale: "de_CH",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Quentin Staquet – Portfolio",
+    description:
+      "Fullstack Developer & Game-Dev Enthusiast. Next.js, React, Datenbanken und Game Development.",
+  },
+  alternates: {
+    canonical: siteUrl,
+  },
 };
 
 export default function RootLayout({ children }) {
