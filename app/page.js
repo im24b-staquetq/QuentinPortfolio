@@ -50,7 +50,21 @@ export default function Home() {
           id="projects"
           label="Arbeit"
           title="Projekte"
-          intro="Ausgewählte Projekte aus Schule und Freizeit – Web, Datenbanken und Game Development."
+          intro={
+            <>
+              Ausgewählte Projekte aus Schule und Freizeit – Web, Datenbanken und Game
+              Development. Mehr zu finden bei{" "}
+              <a
+                href="https://github.com/Spinelpersonal"
+                className="text-cyan-400 underline"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub
+              </a>
+              .
+            </>
+          }
         >
           <div className="grid gap-6 md:grid-cols-2">
             {projects.map((project) => (

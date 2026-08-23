@@ -50,6 +50,19 @@ export const projects = [
     imageFit: "contain",
     highlights: ["REST-ähnliche Struktur", "Datenbankanbindung"],
   },
+  {
+    title: "Genshin Impact Planner",
+    description:
+      "Persönliche Web-App zum Planen von Charakter-Ascensions in Genshin Impact. Der Rechner zeigt, welche Materialien zwischen aktuellem und Ziel-Level noch gefarmt werden müssen.",
+    tech: ["Next.js 16", "React 19", "TypeScript", "Tailwind CSS 4"],
+    image: "/GenshinCalculatorImage.png",
+    repoUrl: "https://github.com/Spinelpersonal/genshin-impact-planner",
+    highlights: [
+      "Ascension-Rechner für Level 1-90",
+      "Charakter-Browser mit Guide-Links",
+      "Typisierte Game-Daten in lib/",
+    ],
+  },
 ];
 
 export const skillGroups = [
