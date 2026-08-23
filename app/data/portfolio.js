@@ -109,11 +109,11 @@ export const skillGroups = [
 ];
 
 export const learningCurrent = [
+  { name: "TypeScript", iconUrl: "https://skillicons.dev/icons?i=ts" },
   { name: "C#", iconUrl: "https://skillicons.dev/icons?i=cs" },
 ];
 
 export const learningPlanned = [
-  { name: "TypeScript", iconUrl: "https://skillicons.dev/icons?i=ts" },
   { name: "PyTorch", iconUrl: "https://skillicons.dev/icons?i=pytorch" },
   { name: "C", iconUrl: "https://skillicons.dev/icons?i=c" },
 ];
